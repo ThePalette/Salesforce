@@ -1,0 +1,41 @@
+<template>
+    
+    
+        <div class="slds-grid slds-gutters slds-wrap slds-p-around_small">
+            <template for:each={itemlist} for:item="item" for:index="index">
+                
+        
+                    <div key={item.Id} class="slds-col slds-size_1-of-1 slds-medium-size_6-of-12 slds-large-size_4-of-12"><!--single tile start-->
+                        <div class="slds-m-around_small slds-box">
+                        <div class="slds-align_absolute-center slds-media slds-media_responsive itemImage imgview">
+                            <img src ={item.Item_Image_Url__c} />
+                        </div>
+                        <div class="slds-text-title slds-p-around_small itemName">
+                            {item.Name}
+                                <div class="slds-text-body_small slds-p-top_small itemDesc">
+                                    {item.Description__c}
+                                    
+                                </div>
+                                
+                                
+                        </div>
+                        <div class="slds-grid">
+                            <div class="slds-text-body_small slds-col slds-size_6-of-12">
+                                &#8377;{item.Price__c}
+                            </div>
+                            <div class="slds-col slds-size_6-of-12">
+                            <div class=" slds-icon slds-icon_small slds-float_right">
+                                <template lwc:if={Nonveg}> <img src={NonVegUrl} /> </template>
+                                <template lwc:else> 
+                                    <template lwc:if={vegan}> <img src={veganUrl} /> </template>
+                                    <template lwc:else> <img src={VegUrl} /> </template>
+                                </template>
+                            </div><!--veg logo-->
+                            </div>
+                        </div>
+                    </div>
+                    </div><!--single tile ends-->
+                </template>
+        </div>
+    
+</template>
