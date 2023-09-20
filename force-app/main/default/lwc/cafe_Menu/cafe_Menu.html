@@ -1,0 +1,28 @@
+<template>
+    <div>
+    <lightning-accordion>
+        <template for:each={mapData} for:item="mapKey">
+            <lightning-accordion-section name={mapKey.key} label={mapKey.key} key={mapKey.key}>
+                
+               <!-- <p>{mapKey.value}</p>-->
+               <c-cafe_-item-tile itemlist={mapKey.value} > </c-cafe_-item-tile>
+                
+            </lightning-accordion-section>
+        </template>
+    </lightning-accordion>
+<!--
+    <lightning-card  variant="Narrow"  title="Menu" icon-name='standard:action_list_component' alternative-text='menu' size='large'>
+        
+        <template if:true={itemlist}>
+            <lightning-datatable
+                key-field="id"
+                data={itemlist}
+                columns={columns}>
+            </lightning-datatable>
+        </template>
+    </lightning-card>
+    <br>
+    <p> {checkdtype}</p>
+    -->
+</div>
+</template>
